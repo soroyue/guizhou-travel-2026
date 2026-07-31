@@ -3,10 +3,10 @@
   "name": "guizhou-travel-2026",
   "build": {
     "root": ".",
-    "command": "echo 'no build'",
-    "outputDir": "."
+    "command": "echo 'no build needed'",
+    "outputDir": "assets"
   },
   "staticAssets": {
-    "directory": "."
+    "directory": "assets"
   }
 }
