@@ -1,0 +1,10 @@
+{
+  "name": "guizhou-travel-2026",
+  "build": {
+    "command": "echo 'static site, no build'",
+    "outputDir": "."
+  },
+  "assets": {
+    "directory": "."
+  }
+}
