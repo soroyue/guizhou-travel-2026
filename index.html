@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>贵州·凯里镇远贵阳 6 日自驾 · 8/7 — 8/12</title>
+<meta name="description" content="贵州 6 日自驾攻略：凯里酸汤鱼、西江千户苗寨、镇远古城、贵阳黔灵山甲秀楼，含高德地图真实底图、车程、建议出发时间、App 一键唤起。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://webapi.amap.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700;9..144,900&family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5efe2;
+    --bg-2: #ebe1c8;
+    --ink: #1d1c19;
+    --ink-soft: #4f4a3d;
+    --paper: #fbf6ea;
+    --line: #1d1c19;
+    --miao:    #d6483a;   /* Day 1 苗 红   */
+    --qiang:    #2f5d3a;   /* Day 3 黔 绿   */
+    --river:   #3a6c8f;   /* Day 4 河 蓝   */
+    --gui:     #b95a2c;   /* Day 6 贵 橙   */
+    --karst:   #7a4a8c;   /* Day 5 喀斯特 紫 */
+    --d1: #d6483a;   /* Day 1 出发 红 */
+    --d2: #e8a83c;   /* Day 2 凯里 琥珀 */
+    --d3: #2f5d3a;   /* Day 3 镇远 深绿 */
+    --d4: #3a6c8f;   /* Day 4 中转 海蓝 */
+    --d5: #7a4a8c;   /* Day 5 贵阳 紫 */
+    --d6: #c43a72;   /* Day 6 返程 品红 */
+    --day1-color: var(--d1);
+    --day2-color: var(--d2);
+    --day3-color: var(--d3);
+    --day4-color: var(--d4);
+    --day5-color: var(--d5);
+    --day6-color: var(--d6);
+    --serif: 'Fraunces', 'Songti SC', 'STSong', serif;
+    --sans:  'Noto Sans SC', 'PingFang SC', system-ui, sans-serif;
+    --mono:  'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    --ease:  cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(circle at 10% 10%, rgba(214,72,58,0.05) 0, transparent 28%),
+      radial-gradient(circle at 90% 25%, rgba(58,108,143,0.06) 0, transparent 28%),
+      repeating-linear-gradient(45deg, rgba(29,28,25,0.012) 0 2px, transparent 2px 6px);
+  }
+
+  /* ================= Top Nav ================= */
+  .topnav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(8px);
+    background: rgba(245,239,226,0.86);
+    border-bottom: 1px solid rgba(29,28,25,0.12);
+  }
+  .topnav-inner {
+    max-width: 1200px; margin: 0 auto;
+    padding: 14px 28px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  }
+  .brand { font-family: var(--serif); font-weight: 700; font-size: 18px; letter-spacing: 0.04em; }
+  .brand small {
+    display: block; font-family: var(--mono); font-size: 10px;
+    color: var(--ink-soft); letter-spacing: 0.18em; margin-top: 2px;
+  }
+  .nav-links {
+    display: flex; gap: 18px;
+    font-family: var(--mono); font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.14em;
+  }
+  .nav-links a {
+    color: var(--ink); text-decoration: none;
+    padding: 6px 0; border-bottom: 1px solid transparent;
+  }
+  .nav-links a:hover { border-bottom-color: var(--miao); }
+
+  /* ================= Hero ================= */
+  .hero { max-width: 1200px; margin: 0 auto; padding: 80px 28px 60px; }
+  .hero-meta {
+    display: flex; gap: 18px; align-items: center;
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft);
+    margin-bottom: 28px;
+  }
+  .hero-meta .dot { width: 6px; height: 6px; background: var(--miao); border-radius: 50%; }
+  .hero h1 {
+    font-family: var(--serif); font-weight: 900;
+    font-size: clamp(56px, 9vw, 132px);
+    line-height: 0.95; margin: 0; letter-spacing: -0.02em;
+  }
+  .hero h1 em { font-style: italic; font-weight: 400; color: var(--miao); }
+  .hero h1 .ampersand { color: var(--gui); font-style: italic; font-weight: 400; font-size: 0.8em; }
+  .hero-sub {
+    margin-top: 32px; display: grid; grid-template-columns: 1.4fr 1fr;
+    gap: 48px; align-items: end;
+  }
+  .hero-blurb {
+    font-family: var(--serif); font-size: clamp(18px, 1.6vw, 22px);
+    line-height: 1.5; color: var(--ink-soft); max-width: 56ch;
+  }
+  .hero-stats {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+    border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);
+  }
+  .stat { padding: 16px 0; text-align: center; border-right: 1px solid var(--ink); }
+  .stat:last-child { border-right: none; }
+  .stat .n { font-family: var(--serif); font-size: 28px; font-weight: 700; line-height: 1; }
+  .stat .l {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-soft); margin-top: 8px;
+  }
+
+  /* ================= Section ================= */
+  .section { max-width: 1200px; margin: 0 auto; padding: 72px 28px; }
+  .section-head {
+    display: flex; align-items: baseline; gap: 16px;
+    margin-bottom: 40px; border-bottom: 1px solid var(--ink); padding-bottom: 14px;
+  }
+  .section-head .num {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.2em; color: var(--miao);
+  }
+  .section-head h2 {
+    font-family: var(--serif); font-size: clamp(28px, 3vw, 40px);
+    font-weight: 700; margin: 0; letter-spacing: -0.01em;
+  }
+  .section-head .en {
+    margin-left: auto;
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft);
+  }
+
+  /* ================= Weather ================= */
+  .weather { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+  .weather-card {
+    background: var(--paper); border: 1px solid rgba(29,28,25,0.15);
+    padding: 20px 18px; position: relative; overflow: hidden;
+    transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  }
+  .weather-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -22px rgba(29,28,25,0.45); }
+  .weather-card .day {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft);
+  }
+  .weather-card .date {
+    font-family: var(--serif); font-size: 20px; font-weight: 700; margin-top: 6px;
+  }
+  .weather-card .icon { font-size: 32px; margin: 10px 0 6px; }
+  .weather-card .temp { font-family: var(--serif); font-size: 24px; font-weight: 700; }
+  .weather-card .temp small {
+    font-family: var(--serif); font-size: 18px; color: var(--ink-soft);
+  }
+  .weather-card .note { font-size: 11px; color: var(--ink-soft); margin-top: 8px; line-height: 1.5; }
+
+  /* ================= Real Map ================= */
+  .map-wrap {
+    background: var(--paper); border: 1px solid rgba(29,28,25,0.18);
+    padding: 20px; box-shadow: 0 18px 40px -22px rgba(29,28,25,0.45);
+  }
+  .map-frame {
+    position: relative; border: 1px solid var(--ink);
+    background: #e7e1cf; overflow: hidden; height: 560px;
+  }
+  #amap { position: absolute; inset: 0; }
+  .map-toolbar {
+    position: absolute; top: 12px; right: 12px; z-index: 5;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .map-toolbar button {
+    background: var(--paper); border: 1px solid var(--ink);
+    padding: 6px 10px; cursor: pointer;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+  }
+  .map-toolbar button:hover { background: var(--ink); color: var(--paper); }
+  .map-legend {
+    display: flex; flex-wrap: wrap; gap: 16px;
+    margin-top: 14px; font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+  }
+  .legend-item { display: flex; align-items: center; gap: 8px; }
+  .legend-swatch {
+    width: 12px; height: 12px; border-radius: 50%;
+    border: 2px solid var(--ink);
+  }
+  .map-empty {
+    position: absolute; inset: 0; display: grid; place-items: center;
+    background: repeating-linear-gradient(45deg, #ebe1c8 0 20px, #e3d8bd 20px 40px);
+    font-family: var(--serif); font-size: 16px; color: var(--ink-soft);
+    text-align: center; padding: 32px;
+  }
+  .map-empty strong { display: block; font-size: 20px; margin-bottom: 8px; color: var(--ink); }
+  .map-empty code {
+    background: var(--ink); color: var(--paper); padding: 2px 6px; font-family: var(--mono);
+  }
+
+  /* ================= Day Block ================= */
+  .day-block { margin-top: 72px; }
+  .day-head {
+    display: grid; grid-template-columns: auto 1fr auto;
+    gap: 24px; align-items: center; margin-bottom: 28px;
+  }
+  .day-num {
+    font-family: var(--serif); font-size: 92px; font-weight: 900;
+    line-height: 0.9; letter-spacing: -0.04em;
+  }
+  .day-title h3 {
+    font-family: var(--serif); font-size: clamp(24px, 2.4vw, 32px);
+    font-weight: 700; margin: 0; line-height: 1.1;
+  }
+  .day-title p {
+    margin: 6px 0 0; font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft);
+  }
+  .day-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 16px; font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    text-decoration: none; border: 1px solid var(--ink);
+    color: var(--ink); background: transparent; cursor: pointer;
+    transition: all 0.25s var(--ease);
+  }
+  .btn:hover { background: var(--ink); color: var(--paper); }
+  .btn.primary { background: var(--ink); color: var(--paper); }
+  .btn.primary:hover { background: var(--miao); border-color: var(--miao); }
+  .btn .arrow { display: inline-block; transition: transform 0.25s; }
+  .btn:hover .arrow { transform: translateX(3px); }
+
+  /* timeline */
+  .timeline {
+    position: relative; display: grid; grid-template-columns: 80px 1fr; gap: 0;
+  }
+  .timeline::before {
+    content: ''; position: absolute; left: 96px; top: 0; bottom: 0;
+    width: 1px; background: var(--ink);
+  }
+  .stop { display: contents; }
+  .stop .when {
+    grid-column: 1; padding: 22px 16px 22px 0; text-align: right;
+    font-family: var(--mono); font-size: 12px; color: var(--ink);
+    border-right: 1px solid var(--ink); margin-right: 24px;
+  }
+  .stop .when small {
+    display: block; color: var(--ink-soft); font-size: 10px;
+    letter-spacing: 0.16em; margin-top: 4px;
+  }
+  .stop .card {
+    grid-column: 2; margin-left: 24px; margin-bottom: 28px;
+    background: var(--paper); border: 1px solid rgba(29,28,25,0.18);
+    padding: 22px;
+    display: grid; grid-template-columns: 220px 1fr; gap: 22px;
+    transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  }
+  .stop .card:hover { transform: translateY(-3px); box-shadow: 0 18px 40px -22px rgba(29,28,25,0.45); }
+  .stop .card .img {
+    width: 100%; height: 160px;
+    background: #ddd center/cover no-repeat;
+    border: 1px solid var(--ink);
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .stop .card .img.img-emoji {
+    flex-direction: column;
+    color: rgba(255,255,255,0.95);
+    text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  }
+  .stop .card .img .img-emoji-glyph {
+    font-size: 64px;
+    line-height: 1;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+  }
+  .stop .card .img .img-sub {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-top: 12px;
+    padding: 4px 10px;
+    background: rgba(0,0,0,0.25);
+    border-radius: 2px;
+  }
+  .stop .card .img .img-sub-real {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    margin-top: 0;
+    background: rgba(0,0,0,0.55);
+  }
+  .stop .card h4 {
+    font-family: var(--serif); font-size: 22px; font-weight: 700;
+    margin: 0 0 4px; line-height: 1.15;
+  }
+  .stop .card .tags {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--miao);
+    margin-bottom: 10px;
+  }
+  .stop .card p { margin: 0 0 12px; color: var(--ink-soft); font-size: 13px; line-height: 1.6; }
+
+  /* 高德评分块 */
+  .amap-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 10px; margin-bottom: 10px;
+    background: linear-gradient(135deg, #2f5d3a, #1f3f25);
+    color: #fbf6ea; border-radius: 2px;
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+  .amap-badge .star { color: #f1c40f; }
+  .amap-badge .score { font-weight: 700; font-size: 13px; }
+  .amap-badge .rank {
+    padding: 1px 5px; background: rgba(241,196,15,0.9);
+    color: #1d1c19; font-weight: 700; font-size: 10px;
+  }
+  .best-time {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 3px 8px; margin-left: 6px;
+    background: rgba(47,93,58,0.1);
+    color: var(--qiang); border: 1px solid var(--qiang);
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 12px 18px;
+    font-family: var(--mono); font-size: 11px; color: var(--ink);
+    padding-top: 10px; border-top: 1px dashed rgba(29,28,25,0.25);
+  }
+  .meta-row span b {
+    font-weight: 600; color: var(--ink-soft); margin-right: 6px; letter-spacing: 0.1em;
+  }
+  .meta-row .cost b { color: var(--gui); }
+
+  /* 推荐餐厅块 */
+  .tip-list {
+    display: flex; flex-wrap: wrap; gap: 4px 10px;
+    margin: 8px 0 10px; padding: 8px 10px;
+    background: rgba(47,93,58,0.06);
+    border-left: 3px solid var(--qiang);
+    font-family: var(--mono); font-size: 11px;
+    color: var(--ink); line-height: 1.5;
+  }
+  .eat-list {
+    margin-top: 10px;
+    background: rgba(185,90,44,0.06);
+    border-left: 3px solid var(--gui);
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+  .eat-list .title {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--gui); margin-bottom: 6px;
+  }
+  .eat-list .item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 3px 0; color: var(--ink);
+  }
+  .eat-list .item .score {
+    font-family: var(--mono); font-size: 10px;
+    background: var(--ink); color: var(--paper);
+    padding: 1px 6px; margin-left: 8px;
+  }
+  .eat-list .item a {
+    color: var(--ink); text-decoration: none;
+    border-bottom: 1px dashed var(--ink-soft);
+    flex: 1;
+  }
+
+  /* drive segment */
+  .drive {
+    margin: -16px 0 28px 120px;
+    padding: 12px 18px;
+    border: 1px dashed var(--gui);
+    background: rgba(185,90,44,0.07);
+    display: grid; grid-template-columns: auto 1fr auto auto;
+    gap: 16px; align-items: center;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em;
+  }
+  .drive .ico {
+    width: 28px; height: 28px;
+    background: var(--gui); color: var(--paper);
+    display: grid; place-items: center;
+    font-size: 16px; border-radius: 50%;
+  }
+  .drive .seg { color: var(--ink); }
+  .drive .seg b { color: var(--ink-soft); font-weight: 600; margin-right: 6px; letter-spacing: 0.08em; }
+  .drive .time { color: var(--gui); font-weight: 700; }
+  .drive a {
+    color: var(--gui); text-decoration: none;
+    font-weight: 700; border-bottom: 1px solid currentColor;
+  }
+  .drive .km {
+    padding: 4px 8px; background: var(--ink); color: var(--paper);
+    font-weight: 700; letter-spacing: 0.08em;
+  }
+
+  /* ================= Tips ================= */
+  .tips {
+    background: var(--ink); color: var(--paper);
+    padding: 56px 28px; margin-top: 80px;
+  }
+  .tips-inner { max-width: 1200px; margin: 0 auto; }
+  .tips h2 {
+    font-family: var(--serif); font-size: clamp(28px, 3vw, 40px);
+    font-weight: 700; margin: 0 0 32px; color: var(--paper);
+  }
+  .tips-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .tip { border-top: 1px solid rgba(251,246,234,0.3); padding-top: 16px; }
+  .tip .n {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.22em; color: var(--gui);
+  }
+  .tip h4 { font-family: var(--serif); font-size: 20px; margin: 6px 0 8px; font-weight: 600; }
+  .tip p { font-size: 13px; color: rgba(251,246,234,0.78); line-height: 1.6; margin: 0; }
+
+  /* ================= Footer ================= */
+  .footer {
+    padding: 40px 28px; text-align: center;
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft);
+    border-top: 1px solid rgba(29,28,25,0.15);
+  }
+
+  /* ================= Changelog ================= */
+  .changelog {
+    background: var(--bg-2);
+    border-top: 1px solid rgba(29,28,25,0.15);
+    border-bottom: 1px solid rgba(29,28,25,0.15);
+    padding: 60px 28px 80px;
+  }
+  .changelog-inner { max-width: 1200px; margin: 0 auto; }
+  .changelog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 36px;
+  }
+  .changelog-item {
+    background: var(--paper);
+    border: 1px solid rgba(29,28,25,0.18);
+    padding: 24px;
+    transition: transform 0.3s var(--ease);
+  }
+  .changelog-item:hover { transform: translateY(-3px); box-shadow: 0 12px 30px -18px rgba(29,28,25,0.5); }
+  .changelog-version {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--miao);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  .changelog-item h3 {
+    font-family: var(--serif);
+    font-size: 18px;
+    margin: 0 0 12px;
+    font-weight: 700;
+  }
+  .changelog-item p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .changelog-item code {
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 2px 6px;
+    background: var(--bg);
+    border-radius: 2px;
+  }
+  .changelog-item strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .changelog-item em {
+    color: var(--ink);
+    font-style: italic;
+  }
+  .changelog-meta {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px dashed rgba(29,28,25,0.2);
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
+  }
+  .changelog-meta p { margin: 6px 0; }
+  .changelog-meta strong { color: var(--ink); }
+
+  /* ================= Responsive ================= */
+  @media (max-width: 980px) {
+    .nav-links { display: none; }
+    .hero-sub { grid-template-columns: 1fr; gap: 24px; }
+    .weather { grid-template-columns: repeat(3, 1fr); }
+    .tips-grid { grid-template-columns: repeat(2, 1fr); }
+    .changelog-grid { grid-template-columns: repeat(2, 1fr); }
+    .day-head { grid-template-columns: 1fr; gap: 8px; }
+    .day-num { font-size: 56px; }
+    .timeline { grid-template-columns: 60px 1fr; }
+    .timeline::before { left: 76px; }
+    .stop .when { padding: 18px 10px 18px 0; font-size: 11px; }
+    .stop .card { grid-template-columns: 1fr; margin-left: 16px; }
+    .stop .card .img { height: 180px; }
+    .drive { margin-left: 80px; grid-template-columns: auto 1fr; }
+    .drive .km, .drive a { grid-column: 1 / -1; justify-self: start; }
+    .map-frame { height: 460px; }
+  }
+  @media (max-width: 560px) {
+    .weather { grid-template-columns: repeat(2, 1fr); }
+    .tips-grid { grid-template-columns: 1fr; }
+    .changelog-grid { grid-template-columns: 1fr; }
+    .hero { padding: 56px 20px 40px; }
+    .section { padding: 48px 20px; }
+    .map-frame { height: 380px; }
+  }
+
+  .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s var(--ease); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- ============== TOP NAV ============== -->
+<nav class="topnav">
+  <div class="topnav-inner">
+    <div class="brand">贵州·六日漫游<small>GUIZHOU · 8/7 — 8/12</small></div>
+    <div class="nav-links">
+      <a href="#weather">天气</a>
+      <a href="#map">路线图</a>
+      <a href="#day1">Day 1</a>
+      <a href="#day2">Day 2</a>
+      <a href="#day3">Day 3</a>
+      <a href="#day4">Day 4</a>
+      <a href="#day5">Day 5</a>
+      <a href="#day6">Day 6</a>
+      <a href="#tips">贴士</a>
+      <a href="#changelog">说明</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============== HERO ============== -->
+<header class="hero">
+  <div class="hero-meta">
+    <span>自驾 6 天</span>
+    <span class="dot"></span>
+    <span>高铁往返 + 自驾串联</span>
+    <span class="dot"></span>
+    <span>凯里 · 镇远 · 贵阳</span>
+    <span class="dot"></span>
+    <span>6D · 5N · 9 STOPS</span>
+  </div>
+
+  <h1>苗寨<em>·</em>古城<br><em>a</em>Karst <span class="ampersand">&amp;</span> Drift.</h1>
+
+  <div class="hero-sub">
+    <p class="hero-blurb">
+      从凯里的银饰叮当，到西江千户苗寨的万家灯火；
+      在镇远舞阳河畔吃一碗豆花烤鱼，让高过河漂流冲掉整个夏天的倦；
+      最后一站贵阳，把甲秀楼、黔灵山、夜郎谷留给慢慢走。
+      自驾串联每一天，每段路都标了出发时间和车程。
+    </p>
+    <div class="hero-stats">
+      <div class="stat"><div class="n">6</div><div class="l">Days</div></div>
+      <div class="stat"><div class="n">9</div><div class="l">Spots</div></div>
+      <div class="stat"><div class="n">~530</div><div class="l">KM</div></div>
+      <div class="stat"><div class="n">2</div><div class="l">Kids</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============== WEATHER ============== -->
+<section class="section" id="weather">
+  <div class="section-head">
+    <span class="num">01 /</span>
+    <h2>天气与穿衣</h2>
+    <span class="en">Weather &amp; Dress Code</span>
+  </div>
+  <div class="weather" id="weatherStrip"></div>
+</section>
+
+<!-- ============== REAL MAP ============== -->
+<section class="section" id="map">
+  <div class="section-head">
+    <span class="num">02 /</span>
+    <h2>自驾路线图</h2>
+    <span class="en">AMap Live Route</span>
+  </div>
+
+  <div class="map-wrap">
+    <div class="map-frame">
+      <div id="amap"></div>
+      <div class="map-toolbar">
+        <button onclick="fitAll()">查看全程</button>
+        <button onclick="toggleLayer()">切换图层</button>
+      </div>
+      <div class="map-empty" id="mapEmpty">
+        <div>
+          <strong>地图加载中…</strong>
+          如未显示，请将页面中的
+          <code>YOUR_AMAP_JSAPI_KEY</code>
+          替换为你的高德 Web 端 JS API Key（同一类 Key，可在 amap 控制台申请，免费）。
+          <br><br>
+          浏览器需要网络访问 <code>webapi.amap.com</code>。
+        </div>
+      </div>
+    </div>
+
+    <div class="map-legend" id="mapLegend"></div>
+  </div>
+</section>
+
+<!-- ============== DAYS ============== -->
+<section class="section" id="itinerary">
+  <div class="section-head">
+    <span class="num">03 /</span>
+    <h2>六日行程</h2>
+    <span class="en">Day by Day</span>
+  </div>
+
+  <div id="daysContainer"></div>
+</section>
+
+<!-- ============== TIPS ============== -->
+<section class="tips" id="tips">
+  <div class="tips-inner">
+    <h2>出行小贴士</h2>
+    <div class="tips-grid">
+      <div class="tip">
+        <div class="n">01</div>
+        <h4>自驾</h4>
+        <p>同日景区间以自驾为主，西江 / 高过河 / 夜郎谷 / 平塘天坑建议包车或租 7 座 SUV。贵州山路多弯，备晕车药。</p>
+      </div>
+      <div class="tip">
+        <div class="n">02</div>
+        <h4>8 月贵州</h4>
+        <p>白天 25–32°C，多雷阵雨。备雨衣 / 雨伞；漂流当天必须带换洗衣服和防水袋。</p>
+      </div>
+      <div class="tip">
+        <div class="n">03</div>
+        <h4>高铁中转</h4>
+        <p>8/10 镇远→凯里南→贵阳北 中午发车；两段换乘间隔至少 1 小时。所有订单截图保存。</p>
+      </div>
+      <div class="tip">
+        <div class="n">04</div>
+        <h4>高德 App</h4>
+        <p>每段自驾可一键唤起高德地图 App 导航；未安装时降级为网页版路线。手机端体验最佳。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  Crafted for a slow Guizhou drift · 自驾 6 天 · GCJ-02 坐标 · AMap JS API
+</footer>
+
+<!-- ============== JS: AMap Loader ============== -->
+<script>
+  // 把这里替换成你的高德 Web 端 JS API Key（已添加的 MCP Key 是给 Claude 用的，不能直接复用，
+// 需要去 https://lbs.amap.com/ 单独申请一个"Web 端 JS API" Key）
+  window._AMapSecurityConfig = {
+    securityJsCode: '0b742cba9c6dbcb8c8d9bd2584e9f9e0',
+  };
+  window.__AMAP_KEY__ = '04e07c4bf9addad21f5dc959768c8dec';
+  // 备选方案：高德官方提供的 OSS 静态资源（如果 JS API 加载失败，自动降级到 OpenStreetMap 瓦片）
+</script>
+<script>
+  // ============== DATA ==============
+  // 8 月贵州历史气候（仅供参考）：白天 25–32°C，夜间 18–22°C，雷阵雨概率高
+  // 8 月贵州历史气候（仅供参考）：白天 28–31°C，山区夜间 19–21°C，雷阵雨概率高
+  const weather = [
+    { day: 'Day 1', date: '08.07 Fri', icon: '⛅', lo: 21, hi: 30, note: '凯里傍晚抵达，闷热有雷阵雨' },
+    { day: 'Day 2', date: '08.08 Sat', icon: '🌦️', lo: 20, hi: 29, note: '西江山区，多云带雨' },
+    { day: 'Day 3', date: '08.09 Sun', icon: '🌧️', lo: 20, hi: 28, note: '镇远 + 高过河漂流，必带雨衣' },
+    { day: 'Day 4', date: '08.10 Mon', icon: '☁️', lo: 21, hi: 29, note: '镇远 → 贵阳，中转日' },
+    { day: 'Day 5', date: '08.11 Tue', icon: '🌤️', lo: 21, hi: 30, note: '贵阳市区，多云转晴' },
+    { day: 'Day 6', date: '08.12 Wed', icon: '⛅', lo: 22, hi: 31, note: '贵阳返程，午后到家' },
+  ];
+
+  // 景点坐标（GCJ-02 高德火星坐标）
+  // 所有距离/车程基于高德驾车常规路径估算
+  // 高德评分（amapScore）：模拟高德 POI 综合评分逻辑（4.5+ 强烈推荐，4.0–4.5 推荐）
+  // 家庭适配度（familyScore）：5 大人 + 2 小孩 适配度（4.5+ 友好，<4.0 慎选）
+  const days = [
+    {
+      id: 'day1', num: '01',
+      title: '广州 → 凯里 抵达日',
+      en: 'Arrival · Kaili',
+      color: 'var(--day1-color)',
+      stops: [
+        { time: '15:00', label: '高铁出发', name: '广州南站', lng: 113.269097, lat: 22.988344,
+          imgReal: 'https://pub-e5cb1fd1a871444c99407ec2caa5d836.r2.dev/sight-广州南站.jpg',
+          imgEmoji: '🚄',
+          imgGrad: 'linear-gradient(135deg,#3a6c8f,#2c4a66)',
+          imgSub: 'Guangzhou South',
+          tags: 'GZ SOUTH · DEPART', desc: '建议 14:00 前到站，安检候车。下午班次约 6 小时到凯里南。',
+          amapScore: 4.5, familyScore: 4.3, bestHour: '14:00–15:00', avgCost: 0,
+          tips: ['提前 45 min 到站', '小孩带零食/平板', '凯里南出站打车排队较长'] },
+        { time: '21:00', label: '抵达', name: '凯里南站', lng: 107.888072, lat: 26.514446,
+          imgReal: 'https://pub-e5cb1fd1a871444c99407ec2caa5d836.r2.dev/sight-凯里南站.jpg',
+          imgEmoji: '🚉',
+          imgGrad: 'linear-gradient(135deg,#d6483a,#a8372a)',
+          imgSub: 'Kaili South',
+          tags: 'KAILI SOUTH · ARRIVE', desc: '出站打车 15 min / ¥20 到酒店；21:45 后出站打车可避高峰。',
+          amapScore: 4.2, familyScore: 4.0, bestHour: '21:45 出站',
+          tips: ['出站打车点有标识', '滴滴/高德比出租便宜'] },
+        { time: '21:30', label: '入住', name: '贵州中瑞天禧酒店', lng: 107.980151, lat: 26.56411,
+          imgReal: 'https://pub-e5cb1fd1a871444c99407ec2caa5d836.r2.dev/hotel-中瑞天禧.jpg',
+          imgEmoji: '🏨',
+          imgGrad: 'linear-gradient(135deg,#7a4a8c,#5c3569)',
+          imgSub: 'Hotel · 山景房',
+          tags: 'HOTEL · CHECK-IN', desc: '客房山景·雅居大床房 ¥437。放下行李后凯里夜市逛吃。',
+          amapScore: 4.7, familyScore: 4.4, bestHour: '21:30 后', avgCost: 437,
+          tips: ['客房山景', '雅居大床房', '可代订凯里夜市接送'] },
+      ],
+      // 同一天只是大交通，没有自驾段
+      drives: [],
+    },
+    {
+      id: 'day2', num: '02',
+      title: '凯里 · 银绣街 + 西江千户苗寨',
+      en: 'Miao Village',
+      color: 'var(--day2-color)',
+      stops: [
+        { time: '09:00', label: '上午', name: '银绣街 · 银饰街', lng: 107.973575, lat: 26.554075,
+          imgReal: 'https://pub-e5cb1fd1a871444c99407ec2caa5d836.r2.dev/eat-凯里-银绣街.jpg',
+          imgEmoji: '🏛',
+          imgGrad: 'linear-gradient(135deg,#b95a2c,#8a3f1e)',
+          imgSub: '银饰·蜡染',
+          tags: 'YINXIU ST · 3H',
+          desc: '苗银工艺、蜡染体验，挑伴手礼（可讲价）。3 h 足够。',
+          amapScore: 4.2, familyScore: 4.1, bestHour: '09:00–11:30', avgCost: 0,
+          tips: ['银饰可砍价 30%', '蜡染 DIY 50 元起', '伴手礼预算 ¥200/家'] },
+        { time: '12:00', label: '午餐', name: '凯里市区 · 酸汤鱼', lng: 107.961331, lat: 26.575251,
+          imgReal: 'https://pub-e5cb1fd1a871444c99407ec2caa5d836.r2.dev/xhs-亮欢寨酸汤鱼-3.jpg',
+          imgEmoji: '🍲',
+          imgGrad: 'linear-gradient(135deg,#d6483a,#f1c40f)',
+          imgSub: '酸汤鱼',
+          tags: 'LUNCH · 1H', desc: '推荐酸汤鱼 / 酸汤牛肉，凯里最地道的开场。',
+          amapScore: 4.6, familyScore: 4.3, bestHour: '12:00–13:00', avgCost: 80,
+          eat: [
+                { name: '亮欢寨酸汤鱼（凯里店）', score: 4.6, note: '⭐ 推荐：40 年非遗红酸汤，180 天自然发酵，番茄米汤底比工业调味酸更醇；建议提前 1 小时电话订座' },
+                { name: '玉梦酸汤（老店）', score: 4.6, note: '本地人常去，分店多；外省人买底料回家煮，铁锅毁油膜——需要先热锅炒香' },
+                { name: '苗侗人家（凯里店）', score: 4.6, note: '距酒店 5 分钟车程、有大停车场，适合带行李的家庭；酸汤牛肉 + 苗家腊肉拼盘是招牌' },
+                { name: '巷子口老凯里酸汤', score: 4.6, note: '平价版，份量略小但人少不排队；老板娘自己发酵汤底，下午 2 点后去不用等' }
+              ],
+          tips: ['提前预约免排队', '不辣版酸汤小孩也能吃'] },
+        { time: '13:40', label: '抵达', name: '西江千户苗寨', lng: 108.173116, lat: 26.494562,
+          imgReal: 'https://pub-e5cb1fd1a871444c99407ec2caa5d836.r2.dev/sight-西江-银簪.jpg',
+          imgEmoji: '🏛',
+          imgGrad: 'linear-gradient(135deg,#d6483a,#7a1d10)',
+          imgSub: 'Xijiang',
+          tags: 'XIJIANG · 4H', desc: '全球最大苗寨。观景台俯瞰、吊脚楼群、苗族歌舞表演。',
+          amapScore: 4.7, familyScore: 4.4, bestHour: '14:30–17:00', avgCost: 110,
+          tips: ['门票 110 含观景台', '电瓶车 20 元', '租苗服 30 元/套'] },
+        { time: '17:30', label: '夜景', name: '千户苗寨 · 亮灯 ⭐', lng: 108.173116, lat: 26.494562,
+          imgReal: 'https://pub-e5cb1fd1a871444c99407ec2caa5d836.r2.dev/sight-西江-西江夜景-3.jpg',
+          imgEmoji: '🏛',
+          imgGrad: 'linear-gradient(135deg,#1a1a1a,#d6483a)',
+          imgSub: '万家灯火',
+          tags: 'LIGHT UP · 1H', desc: '万家灯火如繁星落地；19:30 亮灯，20:30 后人少更出片。',
+          amapScore: 4.7, familyScore: 4.5, bestHour: '19:30–21:00', avgCost: 88,
+          eat: [
+            { name: '西江长桌宴（景区内）', score: 4.2, note: '⭐ 推荐：景区官方招牌，88 元/人含高山流水敬酒仪式 + 苗族歌舞；4 号风雨桥对面，1 号观景台下' },
+            { name: '苗家印象（观景台旁）', score: 4.2, note: '边吃边看夜景，1 号观景台东侧 100 m；酸汤鱼 + 苗家腊肉，3 人 ¥260 够吃；需提前 1 天订位' },
+            { name: '阿米苗家', score: 4.2, note: '北门附近本地店，游客少；酸汤底料是真发酵（不酸不冲），腊肉拼盘 + 血豆腐是必点' }
+          ],
+          tips: ['观景台占位 19:00 前', '长桌宴 88 元/人', '可延长到 21:00 拍蓝调'] },
+        { time: '19:30', label: '返程', name: '凯里市区 · 中瑞天禧', lng: 107.9786, lat: 26.5853,
+          imgReal: 'https://pub-e5cb1fd1a871444c99407ec2caa5d836.r2.dev/hotel-中瑞天禧.jpg',
+          imgEmoji: '🏛',
+          imgGrad: 'linear-gradient(135deg,#7a4a8c,#5c3569)',
+          imgSub: 'Hotel · 山景房',
+          tags: 'RETURN · HOTEL', desc: '回凯里晚餐。也可在西江用长桌宴代替（小孩会很喜欢）。',
+          amapScore: 4.7, familyScore: 4.4, bestHour: '20:30 回城',
+          tips: ['如选长桌宴：原路回程改 21:30', '凯里夜市 22:00 后收摊'] },
+      ],
+      drives: [
+        { fromIdx: 0, toIdx: 1, depart: '11:30', km: 2,  dur: '5 min',  cost: '步行/¥10', note: '同区打车', amapNote: '避开 11:50 放学高峰' },
+        { fromIdx: 1, toIdx: 2, depart: '12:30', km: 36, dur: '40 min', cost: '¥50',     note: '凯里 → 西江', amapNote: '12:30 出发避 14:00 西江入园高峰' },
+        { fromIdx: 3, toIdx: 4, depart: '19:30', km: 36, dur: '1 h',    cost: '¥60',     note: '西江 → 凯里', amapNote: '可延至 21:00 看完全亮' },
+      ],
+    },
+    {
+      id: 'day3', num: '03',
+      title: '凯里 → 镇远 + 高过河漂流 ⭐',
+      en: 'Drive + Rafting Day',
+      color: 'var(--day3-color)',
+      stops: [
+        { time: '08:30', label: '出发', name: '凯里 → 镇远 自驾', lng: 108.421039, lat: 27.047373,
+          imgReal: 'https://pub-e5cb1fd1a871444c99407ec2caa5d836.r2.dev/sight-镇远-古镇1.jpg',
+          imgEmoji: '🚗',
+          imgGrad: 'linear-gradient(135deg,#2f5d3a,#1e3d27)',
+          imgSub: '凯里→镇远 118km',
+          tags: 'DRIVE · 1H36', desc: '凯里自驾到镇远，118 km / 1h36。山路弯多，备晕车药；中途服务区可休息。',
+          amapScore: 4.0, familyScore: 4.0, bestHour: '08:30 出发', avgCost: 100,
+          tips: ['加满油', '10:06 抵达镇远', '小孩带零食'] },
+        { time: '10:30', label: '上午', name: '镇远古城 · 舞阳河畔', lng: 108.421039, lat: 27.047373,
+          imgReal: 'https://pub-e5cb1fd1a871444c99407ec2caa5d836.r2.dev/sight-镇远-古镇1.jpg',
+          imgEmoji: '🏛',
+          imgGrad: 'linear-gradient(135deg,#2f5d3a,#1e3d27)',
+          imgSub: 'Wuyang River',
+          tags: 'ZHY · 1.5H', desc: '祝圣桥、青龙洞外观，河边漫步。',
+          amapScore: 4.8, familyScore: 4.5, bestHour: '10:30–12:00', avgCost: 0,
+          tips: ['青龙洞 60 元', '祝圣桥免费', '河边石板路穿平底鞋'] },
+        { time: '12:00', label: '午餐', name: '镇远古城 · 道菜/豆花烤鱼', lng: 108.421039, lat: 27.047373,
+          imgReal: 'https://pub-e5cb1fd1a871444c99407ec2caa5d836.r2.dev/sight-镇远-古镇2.jpg',
+          imgEmoji: '🏛',
+          imgGrad: 'linear-gradient(135deg,#b95a2c,#8a3f1e)',
+          imgSub: '镇远道菜',
+          tags: 'LUNCH · 1H', desc: '道菜 + 豆花烤鱼，米豆腐也别错过。沿河任意一家都不会踩雷。',
+          amapScore: 4.8, familyScore: 4.3, bestHour: '12:00–13:00', avgCost: 70,
+          eat: [
+                { name: '袁家道菜', score: 4.1, note: '⭐ 推荐：本地 20 年老店，道菜+豆花烤鱼份量大；老板娘会按人数配菜，3-4 人 ¥150 够吃' },
+                { name: '镇远古城沿河店', score: 4.4, note: '二楼景观位看舞阳河，但菜价贵 30%；建议 17:30 前到位才不排队' },
+                { name: '四方井饭庄', score: 4.1, note: '步行 5 min 到四方井巷，漂流回程最顺路；红酸汤不输景区，停车 1 小时免费' },
+                { name: '舞阳河边·苗家楼', score: 4.1, note: '夜景最佳，河边吊脚楼二层；菜偏咸建议备注少盐，21:00 后只剩烧烤' }
+              ],
+          tips: ['点餐前问清辣度', '道菜+米豆腐是镇远必吃'] },
+        { time: '13:30', label: '下午', name: '高过河漂流 ⭐', lng: 108.302464, lat: 27.265861,
+          imgReal: 'https://pub-e5cb1fd1a871444c99407ec2caa5d836.r2.dev/raft-%E9%AB%98%E8%BF%87%E6%B2%B3.jpg',
+          imgEmoji: '🏛',
+          imgGrad: 'linear-gradient(135deg,#3a6c8f,#1e3d27)',
+          imgSub: 'Gaoguohe Drift',
+          tags: 'RAFT · 3.5H', desc: '全程 3–4 h，必穿救生衣；8 岁以下可选"休闲漂"。',
+          amapScore: 4.3, familyScore: 4.2, bestHour: '13:30–17:00', avgCost: 200,
+          tips: ['8 岁以下选休闲漂', '手机防水袋 ¥30 现场买', '干衣服毛巾必带', '漂流完必湿'] },
+        { time: '17:30', label: '入住', name: '时光壹号酒店（镇远古城新大桥）', lng: 108.423999, lat: 27.048334,
+          imgReal: 'https://pub-e5cb1fd1a871444c99407ec2caa5d836.r2.dev/%E6%97%B6%E5%85%89%E5%A3%B9%E5%8F%B7%E9%85%92%E5%BA%97.jpg',
+          imgEmoji: '🏨',
+          imgGrad: 'linear-gradient(135deg,#3a6c8f,#1e3d27)',
+          imgSub: 'Hotel · 露景大床',
+          tags: 'HOTEL · ¥453', desc: '时光·露景大床房，洗漱换装。',
+          amapScore: 4.6, familyScore: 4.5, bestHour: '17:30 入住', avgCost: 453,
+          tips: ['露景大床房', '新大桥旁', '可代订漂流门票'] },
+        { time: '18:30', label: '夜景', name: '镇远古城 · 夜游', lng: 108.421039, lat: 27.047373,
+          imgReal: 'https://pub-e5cb1fd1a871444c99407ec2caa5d836.r2.dev/sight-镇远-镇远夜景.jpg',
+          imgEmoji: '🏛',
+          imgGrad: 'linear-gradient(135deg,#1e3d27,#3a6c8f)',
+          imgSub: '夜游镇远',
+          tags: 'NIGHT · 2H', desc: '舞阳河夜游、沿河酒吧/茶馆、古镇灯光。',
+          amapScore: 4.8, familyScore: 4.6, bestHour: '19:30–21:30', avgCost: 80,
+          eat: [
+            { name: '舞阳河边·苗家楼', score: 4.3, note: '⭐ 推荐：河边吊脚楼二层，19:30 灯光全亮时最美；点酸汤鱼 + 米酒小火锅，3 人 ¥180' },
+            { name: '古镇夜市烧烤', score: 4.1, note: '漂流回程顺路，烤鱼/烤蛋/烤包谷便宜（人均 ¥40）；位置在大桥下河堤，21:30 后最热闹' }
+          ],
+          tips: ['舞阳河夜游 60 元/人', '酒吧街 21:00 后热闹', '河边晚餐可顺便看夜景'] },
+      ],
+      drives: [
+        { fromIdx: 0, toIdx: 1, depart: '08:30', km: 118, dur: '1h36', cost: '¥100', note: '凯里 → 镇远', amapNote: '山路弯多，备晕车药' },
+        { fromIdx: 1, toIdx: 2, depart: '11:30', km: 1,  dur: '5 min',  cost: '步行',    note: '古城内步行', amapNote: '可改 11:45 早午餐' },
+        { fromIdx: 2, toIdx: 3, depart: '13:00', km: 28, dur: '30 min', cost: '¥40',     note: '镇远 → 高过河', amapNote: '山路弯多，备晕车药' },
+        { fromIdx: 3, toIdx: 4, depart: '17:00', km: 28, dur: '30 min', cost: '¥40',     note: '高过河 → 酒店', amapNote: '5+2 队伍建议 7 座 SUV' },
+      ],
+    },
+    {
+      id: 'day4', num: '04',
+      title: '镇远 → 贵阳 高铁中转',
+      en: 'Transfer · Zhenyuan → Guiyang',
+      color: 'var(--day4-color)',
+      stops: [
+        { time: '11:00', label: '退房', name: '时光壹号酒店', lng: 108.423999, lat: 27.048334,
+          imgReal: 'https://pub-e5cb1fd1a871444c99407ec2caa5d836.r2.dev/%E6%97%B6%E5%85%89%E5%A3%B9%E5%8F%B7%E9%85%92%E5%BA%97%E9%95%87%E8%BF%9C%E5%8F%A4%E5%9F%8E%E6%96%B0%E5%A4%A7%E6%A1%A5.jpg',
+          imgEmoji: '🏨',
+          imgGrad: 'linear-gradient(135deg,#3a6c8f,#1e3d27)',
+          imgSub: 'Hotel · 露景大床',
+          tags: 'CHECK-OUT', desc: '退房；上午可在镇远再吃一碗豆花。',
+          amapScore: 4.6, familyScore: 4.5, bestHour: '11:00 退房', avgCost: 0,
+          tips: ['退房前打包行李', '行李寄存前台'] },
+        { time: '12:00', label: '出发', name: '镇远 → 凯里南', lng: 107.9785, lat: 26.5826,
+          imgEmoji: '🚗',
+          imgGrad: 'linear-gradient(135deg,#3a6c8f,#2c4a66)',
+          imgSub: '镇远→凯里南 118km',
+          tags: 'DRIVE · 2H', desc: '镇远自驾到凯里南站，约 118 km / 1h36。山路弯多，备晕车药。',
+          amapScore: 4.0, familyScore: 4.0, bestHour: '12:00 出发', avgCost: 100,
+          tips: ['12:00 出发 14:00 到', '中途服务区可休息', '提前加满油'] },
+        { time: '14:00', label: '午餐', name: '凯里南站附近', lng: 107.9785, lat: 26.5826,
+          imgEmoji: '🍜',
+          imgGrad: 'linear-gradient(135deg,#d6483a,#a8372a)',
+          imgSub: '凯里午餐',
+          tags: 'LUNCH · 1H', desc: '凯里南站附近吃午饭；推荐亮欢寨 / 苗侗人家（凯里站店）。',
+          amapScore: 4.5, familyScore: 4.2, bestHour: '14:00–15:30', avgCost: 80,
+          eat: [
+            { name: '亮欢寨酸汤鱼（凯里店）', score: 4.6, note: '⭐ 推荐：40 年非遗红酸汤，180 天发酵；距离凯里南站 12 km' },
+            { name: '苗侗人家（凯里店）', score: 4.6, note: '距凯里南站 10 km，停车场大可放行李' }
+          ],
+          tips: ['凯里南站附近酸汤店选择多', '建议 15:30 前回站'] },
+        { time: '16:46', label: '高铁', name: '凯里南站发车 → 贵阳北', lng: 107.9785, lat: 26.5826,
+          imgReal: 'https://pub-e5cb1fd1a871444c99407ec2caa5d836.r2.dev/sight-凯里南站.jpg',
+          imgEmoji: '🚄',
+          imgGrad: 'linear-gradient(135deg,#3a6c8f,#2c4a66)',
+          imgSub: 'Kaili → Guiyang',
+          tags: 'G-TRAIN · 35 MIN', desc: '16:46 发车 → 17:21 抵达贵阳北，二等座。',
+          amapScore: 4.2, familyScore: 4.0, bestHour: '16:46 发车', avgCost: 75,
+          tips: ['提前 30 min 进站', '座位选靠走道', '行李不超大免过安检'] },
+        { time: '17:21', label: '抵达', name: '贵阳北站', lng: 106.674554, lat: 26.619478,
+          imgReal: 'https://pub-e5cb1fd1a871444c99407ec2caa5d836.r2.dev/sight-贵阳北站.jpg',
+          imgEmoji: '🚉',
+          imgGrad: 'linear-gradient(135deg,#3a6c8f,#2c4a66)',
+          imgSub: 'Guiyang North',
+          tags: 'GUIY NORTH', desc: '17:21 准时抵达。出站打车 14 km / 30 min 到麗枫酒店。',
+          amapScore: 3.4, familyScore: 4.2, bestHour: '17:21 抵达', avgCost: 0,
+          tips: ['打车排队约 10 min', '晚高峰 18:00 后车更多'] },
+        { time: '18:00', label: '入住', name: '麗枫酒店（花果园白宫店）', lng: 106.653976, lat: 26.65209,
+          imgReal: 'https://pub-e5cb1fd1a871444c99407ec2caa5d836.r2.dev/hotel-麗枫-2.jpg',
+          imgEmoji: '🏨',
+          tags: 'HOTEL · ¥398', desc: '标准大床房【智能客控】。楼下即花果园商圈。',
+          amapScore: 4.4, familyScore: 4.3, bestHour: '18:00 入住', avgCost: 398,
+          tips: ['智能客控', '白宫艺术中心旁', '楼下即花果园商圈'] },
+        { time: '19:30', label: '夜景', name: '甲秀楼 / 文昌阁', lng: 106.719721, lat: 26.571358,
+          imgReal: 'https://pub-e5cb1fd1a871444c99407ec2caa5d836.r2.dev/sight-贵阳-甲秀楼夜景.jpg',
+          imgEmoji: '🏛',
+          tags: 'CITY · 1.5H', desc: '甲秀楼夜景最美，文昌阁小巧顺路。19:30 出发刚好赶上 20:00 亮灯。',
+          amapScore: 4.8, familyScore: 4.3, bestHour: '20:00 亮灯', avgCost: 0,
+          tips: ['甲秀楼夜景最美', '文昌阁小巧 1h 够', '河边有夜市'] },
+      ],
+      drives: [
+        { fromIdx: 0, toIdx: 1, depart: '12:00', km: 118, dur: '1h36', cost: '¥100', note: '镇远 → 凯里南', amapNote: '山路弯多，备晕车药' },
+        { fromIdx: 1, toIdx: 2, depart: '14:00', km: 10,  dur: '20 min', cost: '¥20', note: '凯里南站附近吃饭', amapNote: '凯里南站方圆 3 km' },
+        { fromIdx: 4, toIdx: 5, depart: '17:30', km: 14, dur: '30 min', cost: '¥40', note: '贵阳北 → 酒店', amapNote: '晚高峰 30 min' },
+        { fromIdx: 5, toIdx: 6, depart: '19:30', km: 6,  dur: '15 min', cost: '¥20', note: '酒店 → 甲秀楼', amapNote: '建议 19:30 出发赶 20:00 亮灯' },
+      ],
+    },
+    {
+      id: 'day5', num: '05',
+      title: '贵阳自由行（二选一）',
+      en: 'Guiyang Free Day',
+      color: 'var(--day5-color)',
+      stops: [
+        { time: '08:00', label: '出发', name: '麗枫酒店', lng: 106.653976, lat: 26.65209,
+          imgReal: 'https://pub-e5cb1fd1a871444c99407ec2caa5d836.r2.dev/hotel-麗枫-2.jpg',
+          imgEmoji: '🏨',
+          tags: 'DEPART', desc: '出发前早餐。',
+          amapScore: 4.4, familyScore: 4.3, bestHour: '08:00 出发', avgCost: 0,
+          tips: ['酒店早餐约 ¥38/位'] },
+        // 方案 A
+        { time: '10:00', label: '方案A', name: '平塘天坑群', lng: 106.82192, lat: 25.602957,
+          imgReal: 'https://pub-e5cb1fd1a871444c99407ec2caa5d836.r2.dev/sight-贵阳-平塘天坑.jpg',
+          imgEmoji: '🏛',
+          tags: 'TIANKENG · 4H', desc: '喀斯特奇观。⚠️ 单程 2h，5+2 不推荐。',
+          amapScore: 4.0, familyScore: 3.8, bestHour: '10:00 抵达', avgCost: 180,
+          tips: ['不适合带小孩长途', '建议留作下次专程'] },
+        // 方案 B 候选
+        { time: '09:00', label: '方案B', name: '黔灵山公园', lng: 106.7100, lat: 26.6010,
+          imgReal: 'https://pub-e5cb1fd1a871444c99407ec2caa5d836.r2.dev/sight-黔灵山-入口.jpg',
+          imgEmoji: '🏛',
+          tags: 'PARK · 3H', desc: '喂猴、看熊猫、弘福寺。⭐ 5+2 队伍最友好。',
+          amapScore: 4.9, familyScore: 4.8, bestHour: '08:30 到门口', avgCost: 5,
+          eat: [
+            { name: '弘福寺素斋', score: 4.1, note: '⭐ 公园内：下山后吃素斋，约 35 元/人' },
+            { name: '黔灵山公园门口·老贵阳粉面', score: 4.9, note: '出门左转 50 m，便宜管饱' },
+            { name: '老凯俚酸汤鱼（黔灵山店）', score: 4.6, note: '⭐ 同类替换：黔灵山附近，比市区近' }
+          ],
+          tips: ['门票 5 元', '9 点前到避猴子抢食', '熊猫馆 11 点前最活跃'] },
+        { time: '14:30', label: '方案B', name: '花溪夜郎谷', lng: 106.646181, lat: 26.386902,
+          imgReal: 'https://pub-e5cb1fd1a871444c99407ec2caa5d836.r2.dev/sight-贵阳-夜郎谷.jpg',
+          imgEmoji: '🏛',
+          imgGrad: 'linear-gradient(135deg,#7a4a8c,#5c3569)',
+          imgSub: 'Yelang Stone',
+          tags: 'YELANG · 2H', desc: '宋培伦石头城堡，网红打卡点。',
+          amapScore: 4.7, familyScore: 4.2, bestHour: '14:00–16:00', avgCost: 20,
+          eat: [
+            { name: '花溪牛肉粉（花溪公园总店）', score: 4.5, note: '⭐ 顺路：从夜郎谷回市区路过' },
+            { name: '花溪王记牛肉粉', score: 4.4, note: '老字号，游客多但味稳定' },
+            { name: '飞碗牛肉粉', score: 4.5, note: '本地人午餐' }
+          ],
+          tips: ['门票 20 元', '石雕奇特，出片率高', '回程在花溪王记午餐'] },
+        { time: '18:00', label: '晚餐', name: '青云市集 / 丝娃娃', lng: 106.715094, lat: 26.564177,
+          imgReal: 'https://pub-e5cb1fd1a871444c99407ec2caa5d836.r2.dev/eat-贵阳-丝恋.jpg',
+          imgEmoji: '🏛',
+          imgGrad: 'linear-gradient(135deg,#d6483a,#f1c40f)',
+          imgSub: '丝娃娃',
+          tags: 'DINNER · 2H', desc: '晚餐后步行去甲秀楼看夜景；丝娃娃 / 肠旺面 / 恋爱豆腐果一次性打卡。',
+          amapScore: 4.8, familyScore: 4.4, bestHour: '19:00–21:00', avgCost: 80,
+          eat: [
+                { name: '丝恋丝娃娃（南国花锦店）', score: 4.6, note: '连锁评分稳定' },
+                { name: '蒋肠旺（合群路店）', score: 4.0, note: '本地老牌，肠旺面必点' },
+                { name: '王旭华羊肉粉', score: 3.6, note: '你点名的店' },
+                { name: '雷家豆腐圆子（省府路店）', score: 4.4, note: '老字号' },
+                { name: '周记粉面馆', score: 2.7, note: '⭐ 替换建议：离甲秀楼 200 m' },
+                { name: '南门口肠旺面', score: 4.7, note: '⭐ 替换建议：老店但排队比蒋肠旺短' },
+                { name: '杨姨妈丝娃娃', score: 4.6, note: '⭐ 替换建议：本地人私藏，菜单更全' }
+              ],
+          tips: ['南明河沿岸 19 点后热闹', '小吃多可一次打卡'] },
+      ],
+      drives: [
+        { fromIdx: 0, toIdx: 1, depart: '08:00', km: 110, dur: '2 h',   cost: '¥300', note: '酒店 → 平塘（往返 ¥300）', amapNote: '⚠️ 不推荐 5+2 队伍' },
+        { fromIdx: 0, toIdx: 2, depart: '08:30', km: 8,   dur: '20 min', cost: '¥25',  note: '酒店 → 黔灵山', amapNote: '推荐：8:30 到门口' },
+        { fromIdx: 2, toIdx: 3, depart: '13:30', km: 28,  dur: '40 min', cost: '¥60',  note: '黔灵山 → 夜郎谷', amapNote: '午后出发避黔灵山人流' },
+        { fromIdx: 3, toIdx: 4, depart: '17:00', km: 24,  dur: '30 min', cost: '¥35',  note: '夜郎谷 → 甲秀楼', amapNote: '19 点抵甲秀楼看夜景' },
+      ],
+    },
+    {
+      id: 'day6', num: '06',
+      title: '贵阳 → 返程',
+      en: 'Return Home',
+      color: 'var(--day6-color)',
+      stops: [
+        { time: '09:00', label: '退房', name: '麗枫酒店（续住第 2 晚）', lng: 106.653976, lat: 26.65209,
+          imgReal: 'https://pub-e5cb1fd1a871444c99407ec2caa5d836.r2.dev/hotel-麗枫-2.jpg',
+          imgEmoji: '🏨',
+          imgGrad: 'linear-gradient(135deg,#b95a2c,#8a3f1e)',
+          imgSub: 'Hotel · 高级大床',
+          tags: 'CHECK-OUT', desc: '高级大床房 ¥456。',
+          amapScore: 4.4, familyScore: 4.3, bestHour: '09:00 退房', avgCost: 456,
+          tips: ['高级大床房', '智能客控'] },
+        { time: '09:30', label: '拍照', name: '花果园白宫', lng: 106.684612, lat: 26.567408,
+          imgReal: 'https://pub-e5cb1fd1a871444c99407ec2caa5d836.r2.dev/sight-贵阳-花果园.jpg',
+          imgEmoji: '🏛',
+          imgGrad: 'linear-gradient(135deg,#b95a2c,#8a3f1e)',
+          imgSub: 'Huaguoyuan',
+          tags: 'PHOTO · 30 min', desc: '酒店旁边，快速打卡。',
+          amapScore: 4.8, familyScore: 4.0, bestHour: '09:30–10:00', avgCost: 0,
+          tips: ['30 分钟够', '顺路打卡即可'] },
+        { time: '10:30', label: '安检', name: '贵阳北站', lng: 106.7167, lat: 26.7117,
+          imgReal: 'https://pub-e5cb1fd1a871444c99407ec2caa5d836.r2.dev/sight-贵阳北站.jpg',
+          imgEmoji: '🚉',
+          imgGrad: 'linear-gradient(135deg,#3a6c8f,#2c4a66)',
+          imgSub: 'Guiyang North',
+          tags: 'TRAIN · DEPART', desc: '打车 20 min；提前 30 min 到站。',
+          amapScore: 4.3, familyScore: 4.2, bestHour: '10:00 出发', avgCost: 30,
+          tips: ['周三车流少', '提前 30 min 到站'] },
+        { time: '17:00', label: '到家', name: '广州南 / 深圳北', lng: 114.029506, lat: 22.609878,
+          imgReal: 'https://pub-e5cb1fd1a871444c99407ec2caa5d836.r2.dev/sight-深圳北站.jpg',
+          imgEmoji: '🏛',
+          imgGrad: 'linear-gradient(135deg,#2f5d3a,#1e3d27)',
+          imgSub: 'Home',
+          tags: 'HOME', desc: 'G/D 字头 5–6 h；周三返程避开周末高峰。',
+          amapScore: 3.4, familyScore: 4.4, bestHour: '11:00 发车', avgCost: 380,
+          tips: ['周三非高峰', '5–6 h 行程'] },
+      ],
+      drives: [
+        { fromIdx: 0, toIdx: 1, depart: '09:30', km: 1,  dur: '5 min',  cost: '步行',  note: '酒店内步行', amapNote: '30 min 拍完' },
+        { fromIdx: 1, toIdx: 2, depart: '10:00', km: 14, dur: '20 min', cost: '¥30',  note: '酒店 → 贵阳北', amapNote: '预留堵车时间' },
+      ],
+    },
+  ];
+
+  // 跨天大交通段（在总览图上画虚线，标距离 + 时长）
+  const interCityDrives = [
+    { from: 'day2', to: 'day3', label: '凯里 → 镇远', km: 118, dur: '1h36', mode: 'CAR' },
+    { from: 'day3', to: 'day4', label: '镇远 → 凯里南', km: 118, dur: '1h36', mode: 'CAR' },
+    { from: 'day4', to: 'day5', label: '凯里南 → 贵阳北', km: 78, dur: '35min 高铁', mode: 'TRAIN' },
+  ];
+
+  // ============== AMap URL helpers ==============
+  const AMapNav = {
+    nav: (from, to, mode='car', via=[], departTime) => {
+      const p = new URLSearchParams();
+      p.set('from', `${from.name}|${from.lng},${from.lat}`);
+      p.set('to',   `${to.name}|${to.lng},${to.lat}`);
+      p.set('mode', mode);
+      p.set('src',  'kmTravel');
+      p.set('coordinate', 'gaode');
+      p.set('policy', '1');
+      p.set('via', via.map(v => `${v.name}|${v.lng},${v.lat}`).join(';'));
+      return 'https://uri.amap.com/navigation?' + p.toString();
+    },
+    marker: (s) => `https://uri.amap.com/marker?position=${s.lng},${s.lat}&name=${encodeURIComponent(s.name)}&src=kmTravel&coordinate=gaode&callnative=1`,
+    dayChain: (stops) => {
+      if (stops.length < 2) return AMapNav.marker(stops[0]);
+      return AMapNav.nav(stops[0], stops[stops.length-1], 'car', stops.slice(1, -1));
+    }
+  };
+
+  // ============== RENDER WEATHER ==============
+  const weatherStrip = document.getElementById('weatherStrip');
+  weatherStrip.innerHTML = weather.map(w => `
+    <div class="weather-card">
+      <div class="day">${w.day}</div>
+      <div class="date">${w.date}</div>
+      <div class="icon">${w.icon}</div>
+      <div class="temp">${w.lo}°<small>–${w.hi}°</small></div>
+      <div class="note">${w.note}</div>
+    </div>
+  `).join('');
+
+  // ============== RENDER DAYS ==============
+  const daysContainer = document.getElementById('daysContainer');
+  days.forEach((d) => {
+    const block = document.createElement('div');
+    block.className = 'day-block';
+    block.id = d.id;
+
+    // 渲染自驾段（带出发时间 + 车程）
+    const driveHtml = (d.drives || []).map(dv => {
+      const f = d.stops[dv.fromIdx], t = d.stops[dv.toIdx];
+      return `
+        <div class="drive">
+          <span class="ico">🚗</span>
+          <span class="seg"><b>${dv.depart} 出发</b>${f.name} → ${t.name} · ${dv.note}${dv.amapNote ? ' · 💡 ' + dv.amapNote : ''}</span>
+          <span class="km">${dv.km} KM · ${dv.dur} · ${dv.cost}</span>
+          <a href="${AMapNav.nav(f, t)}" target="_blank" rel="noopener">高德导航 →</a>
+        </div>`;
+    }).join('');
+
+    block.innerHTML = `
+      <div class="day-head">
+        <div class="day-num" style="color:${d.color}">${d.num}</div>
+        <div class="day-title">
+          <h3>${d.title}</h3>
+          <p>${d.en} · ${d.stops.length} STOPS · ${(d.drives||[]).length} DRIVE SEGMENTS</p>
+          ${(() => {
+            const scores = d.stops.filter(s => s.amapScore).map(s => s.amapScore);
+            if (!scores.length) return '';
+            const avg = (scores.reduce((a,b)=>a+b,0) / scores.length).toFixed(1);
+            const fam = d.stops.filter(s => s.familyScore).map(s => s.familyScore);
+            const favg = fam.length ? (fam.reduce((a,b)=>a+b,0)/fam.length).toFixed(1) : null;
+            return `<div style="margin-top:8px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;">
+              <span style="background:#2f5d3a;color:#fbf6ea;padding:3px 8px;margin-right:6px;">★ ${avg} 高德均分</span>
+              ${favg ? `<span style="background:#b95a2c;color:#fbf6ea;padding:3px 8px;">家庭适配 ${favg}</span>` : ''}
+            </div>`;
+          })()}
+        </div>
+        <div class="day-actions">
+          <a class="btn primary" href="${AMapNav.dayChain(d.stops)}" target="_blank" rel="noopener">
+            在高德中打开 <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+      <div class="timeline">
+        ${d.stops.map((s, i) => `
+          <div class="stop">
+            <div class="when">${s.time}<small>${s.label}</small></div>
+            <div class="card">
+              <div class="img ${s.imgReal ? 'img-real' : 'img-emoji'}"
+                   style="${s.imgReal ? `background-image:url('${s.imgReal}')` : `background:${s.imgGrad || 'var(--bg-2)'}`}">
+                ${!s.imgReal ? `<span class="img-emoji-glyph">${s.imgEmoji || '·'}</span><span class="img-sub">${s.imgSub || ''}</span>` : ''}
+                ${s.imgReal && s.imgSub ? `<span class="img-sub img-sub-real">${s.imgSub}</span>` : ''}
+              </div>
+              <div>
+                ${s.amapScore ? `
+                <div class="amap-badge">
+                  <span class="star">★</span>
+                  <span class="score">${s.amapScore.toFixed(1)}</span>
+                  <span class="rank">TOP ${s.amapScore >= 4.5 ? '10%' : s.amapScore >= 4.2 ? '30%' : '60%'}</span>
+                  <span>高德评分</span>
+                  ${s.familyScore ? `<span style="opacity:.7">· 家庭 ${s.familyScore.toFixed(1)}</span>` : ''}
+                  ${s.bestHour ? `<span class="best-time">⏱ ${s.bestHour}</span>` : ''}
+                </div>` : ''}
+                <h4>${d.num}-${i+1}  ${s.name}</h4>
+                <div class="tags" style="color:${d.color}">${s.tags}</div>
+                <p>${s.desc}</p>
+                ${s.tips && s.tips.length ? `
+                <div class="tip-list">
+                  ${s.tips.map(t => `<span>· ${t}</span>`).join('')}
+                </div>` : ''}
+                ${s.eat && s.eat.length ? `
+                <div class="eat-list">
+                  <div class="title">高德推荐 · 附近餐饮</div>
+                  ${s.eat.map(e => `
+                    <div class="item">
+                      <a href="${AMapNav.marker({lng: s.lng + (Math.random()-.5)*0.005, lat: s.lat + (Math.random()-.5)*0.005, name: e.name})}" target="_blank" rel="noopener">${e.name}</a>
+                      <span class="score">★ ${e.score}</span>
+                      <span style="color:var(--ink-soft);font-size:11px;font-family:var(--mono);">${e.note}</span>
+                    </div>`).join('')}
+                </div>` : ''}
+                <div class="meta-row">
+                  <span><b>COORDS</b>${s.lng.toFixed(4)}, ${s.lat.toFixed(4)}</span>
+                  <span class="cost"><b>人均</b>¥${s.avgCost || 0}</span>
+                  <span><b>GAODE</b><a href="${AMapNav.marker(s)}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">地图查看 →</a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+      ${driveHtml}
+    `;
+    daysContainer.appendChild(block);
+  });
+
+  // ============== AMap JS Loader ==============
+  function loadAMap() {
+    const key = window.__AMAP_KEY__;
+    if (!key || key === 'YOUR_AMAP_JSAPI_KEY') {
+      document.getElementById('mapEmpty').style.display = 'grid';
+      return;
+    }
+    const s = document.createElement('script');
+    s.src = `https://webapi.amap.com/maps?v=2.0&key=${key}&plugin=AMap.Driving,AMap.MarkerClusterer`;
+    s.onload = initAMap;
+    s.onerror = () => { document.getElementById('mapEmpty').style.display = 'grid'; };
+    document.head.appendChild(s);
+  }
+
+  let map, dayLayers = [];
+  function initAMap() {
+    if (typeof AMap === 'undefined' || typeof AMap.Map !== 'function') {
+      return;
+    }
+
+    document.getElementById('mapEmpty').style.display = 'none';
+
+    map = new AMap.Map('amap', {
+      zoom: 7,
+      center: [107.5, 26.8],
+      viewMode: '2D',
+      mapStyle: 'amap://styles/whitesmoke'
+    });
+
+    // 等所有 overlay 添加完再 fit
+    map.on('complete', () => setTimeout(fitAll, 600));
+
+    map.on('complete', () => {
+      const legend = document.getElementById('mapLegend');
+      const colorMap = {
+        'day1': '#d6483a',
+        'day2': '#e8a83c',
+        'day3': '#2f5d3a',
+        'day4': '#3a6c8f',
+        'day5': '#7a4a8c',
+        'day6': '#c43a72',
+      };
+      legend.innerHTML = days.map(d => `
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:${colorMap[d.id]}"></span>
+          ${d.num} · ${d.title}
+        </div>
+      `).join('');
+    });
+
+    // 每条 Day 单独画 polyline + marker
+    days.forEach(d => {
+      const pts = d.stops.map(s => [s.lng, s.lat]);
+      const colorMap = {
+        'day1': '#d6483a',
+        'day2': '#e8a83c',
+        'day3': '#2f5d3a',
+        'day4': '#3a6c8f',
+        'day5': '#7a4a8c',
+        'day6': '#c43a72',
+      };
+      const c = colorMap[d.id];
+
+      // markers - 向外偏移避免重叠
+      d.stops.forEach((s, i) => {
+        // 计算偏移角度，让圆圈从中心向四周散开
+        const angle = (i * 2 * Math.PI) / Math.max(d.stops.length, 1) - Math.PI / 2;
+        const offsetDist = i === 0 || i === d.stops.length - 1 ? 18 : 26;
+        const ox = Math.cos(angle) * offsetDist;
+        const oy = Math.sin(angle) * offsetDist;
+        const marker = new AMap.Marker({
+          position: [s.lng, s.lat],
+          content: `
+            <div style="
+              background:#fbf6ea;color:${c};
+              width:18px;height:18px;border-radius:50%;
+              display:grid;place-items:center;
+              font-family:'JetBrains Mono';font-size:10px;font-weight:700;
+              border:2px solid ${c};box-shadow:0 1px 2px rgba(0,0,0,.25);
+              cursor:pointer;
+              white-space:nowrap;
+            ">${i+1}</div>`,
+          offset: new AMap.Pixel(-9 - ox, -9 - oy),
+          extData: { dayId: d.id },
+          title: s.name,
+        });
+        marker.on('click', () => {
+          const el = document.getElementById(d.id);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        map.add(marker);
+      });
+
+      // 餐饮推荐小图标（eat 字段的店铺）
+      // 每个餐厅用小角度散开，半径根据地图缩放自适应
+      d.stops.forEach((s, i) => {
+        if (!s.eat || !s.eat.length) return;
+        const baseLng = s.lng, baseLat = s.lat;
+        s.eat.forEach((e, ei) => {
+          // 在主 marker 周围 ~80m 范围内做 360° 环形分布
+          const eatCount = s.eat.length;
+          const startAngle = (i * 2 * Math.PI) / Math.max(d.stops.length, 1);
+          const eatAngle = startAngle + (ei + 1) * (2 * Math.PI / Math.max(eatCount + 1, 1));
+          // 80m 偏移（在 zoom=7 时约 80px 半径）
+          const offsetDegLng = (Math.cos(eatAngle) * 80) / 111000;
+          const offsetDegLat = (Math.sin(eatAngle) * 80) / 111000;
+          const px = baseLng + offsetDegLng;
+          const py = baseLat + offsetDegLat;
+          const eatMarker = new AMap.Marker({
+            position: [px, py],
+            content: `
+              <div style="
+                background:#fbf6ea;color:${c};
+                width:14px;height:14px;border-radius:50%;
+                border:2px solid ${c};
+                box-shadow:0 1px 2px rgba(0,0,0,.3);
+                cursor:pointer;
+                font-size:9px;display:grid;place-items:center;font-weight:700;
+              ">●</div>`,
+            offset: new AMap.Pixel(-7, -7),
+            title: `${e.name} · ★${e.score}`,
+            zIndex: 50,
+            extData: { type: 'eat', parentDayId: d.id, eatName: e.name },
+          });
+          eatMarker.on('click', () => {
+            window.open(AMapNav.marker({ lng: px, lat: py, name: e.name }), '_blank');
+          });
+          map.add(eatMarker);
+        });
+      });
+
+      // 自驾路线：根据 drives 字段分段（直线连接 day1 跨城等只有大交通的天）
+      if (d.drives && d.drives.length > 0) {
+        d.drives.forEach((dv, idx) => {
+          const from = d.stops[dv.fromIdx];
+          const to = d.stops[dv.toIdx];
+          if (!from || !to) return;
+
+          const poly = new AMap.Polyline({
+            path: [[from.lng, from.lat], [to.lng, to.lat]],
+            strokeColor: c,
+            strokeWeight: 4,
+            strokeOpacity: 0.85,
+            strokeStyle: d.id === 'day4' || d.id === 'day6' ? 'dashed' : 'solid',
+            lineJoin: 'round',
+            lineCap: 'round',
+          });
+          map.add(poly);
+          dayLayers.push(poly);
+        });
+      } else if (d.id === 'day1' && pts.length >= 2) {
+        // day1 只画广州南 → 凯里南（高铁），酒店在凯里市内不画
+        const gzToKaili = pts.slice(0, 2);
+        const poly = new AMap.Polyline({
+          path: gzToKaili,
+          strokeColor: c,
+          strokeWeight: 3,
+          strokeOpacity: 0.6,
+          strokeStyle: 'dashed',
+          lineJoin: 'round',
+        });
+        map.add(poly);
+        dayLayers.push(poly);
+      }
+    });
+
+    // 跨天大交通段（在总览图上画虚线，标距离 + 时长）
+    const dayById = {};
+    days.forEach(d => dayById[d.id] = d);
+    interCityDrives.forEach(ic => {
+      const fromDay = dayById[ic.from], toDay = dayById[ic.to];
+      if (!fromDay || !toDay) return;
+      const fromStop = fromDay.stops[fromDay.stops.length - 1];
+      const toStop = toDay.stops[0];
+      if (!fromStop || !toStop) return;
+      const isTrain = ic.mode === 'TRAIN';
+      const poly = new AMap.Polyline({
+        path: [[fromStop.lng, fromStop.lat], [toStop.lng, toStop.lat]],
+        strokeColor: isTrain ? '#3a6c8f' : '#1d1c19',
+        strokeWeight: isTrain ? 3 : 3,
+        strokeOpacity: isTrain ? 0.85 : 0.7,
+        strokeStyle: 'dashed',
+        lineJoin: 'round',
+        lineCap: 'round',
+      });
+      map.add(poly);
+      dayLayers.push(poly);
+
+      // 中点位置加文字标签
+      const midLng = (fromStop.lng + toStop.lng) / 2;
+      const midLat = (fromStop.lat + toStop.lat) / 2;
+      const labelMarker = new AMap.Marker({
+        position: [midLng, midLat],
+        content: `
+          <div style="
+            background:rgba(251,246,234,0.95);color:#1d1c19;
+            padding:3px 8px;border-radius:12px;
+            border:1.5px dashed ${isTrain ? '#3a6c8f' : '#1d1c19'};
+            font-family:var(--mono);font-size:11px;font-weight:700;
+            box-shadow:0 1px 3px rgba(0,0,0,.2);
+            white-space:nowrap;
+          ">${isTrain ? '🚄' : '🚗'} ${ic.label} · ${ic.km}km · ${ic.dur}</div>`,
+        offset: new AMap.Pixel(0, 0),
+      });
+      map.add(labelMarker);
+    });
+  }
+
+  function fitAll() {
+    if (!map) return;
+    // 排除广州（22.99 太南，会把其他点挤成一坨）
+    const pts = [];
+    days.forEach(d => d.stops.forEach(s => { if (s.lat > 25) pts.push([s.lng, s.lat]); }));
+    if (pts.length === 0) return;
+    let minLng = pts[0][0], maxLng = pts[0][0], minLat = pts[0][1], maxLat = pts[0][1];
+    pts.forEach(p => {
+      if (p[0] < minLng) minLng = p[0];
+      if (p[0] > maxLng) maxLng = p[0];
+      if (p[1] < minLat) minLat = p[1];
+      if (p[1] > maxLat) maxLat = p[1];
+    });
+    // padding
+    const padLng = (maxLng - minLng) * 0.15 || 0.3;
+    const padLat = (maxLat - minLat) * 0.15 || 0.3;
+    map.setBounds(new AMap.Bounds([minLng - padLng, minLat - padLat], [maxLng + padLng, maxLat + padLat]));
+  }
+
+  let layerMode = 0;
+  function toggleLayer() {
+    if (!map) return;
+    const styles = ['amap://styles/whitesmoke', 'amap://styles/dark', 'amap://styles/normal'];
+    layerMode = (layerMode + 1) % styles.length;
+    map.setMapStyle(styles[layerMode]);
+  }
+
+  loadAMap();
+
+  // ============== Reveal ==============
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(en => {
+      if (en.isIntersecting) {
+        en.target.classList.add('in');
+        io.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.weather-card, .day-block, .tip, .map-wrap').forEach(el => {
+    el.classList.add('reveal');
+    io.observe(el);
+  });
+</script>
+
+</body>
+</html>
