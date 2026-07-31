@@ -1,0 +1,11 @@
+{
+  "name": "guizhou-travel-2026",
+  "version": "1",
+  "build": {
+    "command": "echo done",
+    "outputDir": "assets"
+  },
+  "assets": {
+    "directory": "assets"
+  }
+}
