@@ -1,0 +1,8 @@
+{
+  "name": "guizhou-travel-2026",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "echo 'static site, no build needed' && exit 0"
+  }
+}
